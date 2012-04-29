@@ -8,6 +8,7 @@
  $ mv /tmp/.meteor/ collaborative_minutes/
  $ cd collaborative_minutes/
  $ meteor add jquery 
+ $ mkdir save
 
 == Usage
 
