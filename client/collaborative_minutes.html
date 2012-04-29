@@ -1,0 +1,95 @@
+<head>
+  <title>Collaborative Minutes</title>
+</head>
+
+<body>
+  <div id="top-speaker-list">
+    {{> speaker_list}}
+  </div>
+
+  <div id="main-pane">
+    {{> logs}}
+  </div>
+</body>
+
+<template name="logs">
+  <div id="items-view">
+    <ul id="item-list">
+      {{#each logs}}
+        {{> log_item}}
+      {{/each}}
+    </ul>
+    <div id="pending" >
+      {{#if count}}
+        <div class="user_pending">[pending inputs]</div>
+        {{#each pending}}
+        <div class="user_pending">id:{{name}} > {{input}}</div>
+        {{/each}}
+      {{/if}}
+    </div>
+    <div id="new-log-box" >
+       <input type="text" id="new-log" placeholder="add statement"/>
+    </div>
+  </div>
+</template>
+
+<template name="log_item">
+  <li class="log {{done_class}}">
+    <div class="item-speakers">
+      {{#each speaker_objs}}
+        {{> log_speaker}}
+      {{/each}}
+
+      {{#if adding_speaker}}
+      <div class="speaker editspeaker">
+        <input type="text" id="editspeaker-input" value="" />
+      </div>
+      {{else}}
+      <div class="speaker addspeaker">
+        +
+      </div>
+      {{/if}}
+    </div>
+
+    {{#if editing}}
+    <div class="edit">
+      <input id="log-input" type="text" value="{{text}}" />
+    </div>
+    {{else}}
+    <div class="destroy"></div>
+    <div class="display">
+      <div class="log-text">{{text}}</div>
+    </div>
+    {{/if}}
+
+    <div class="created-at">{{created_at}}</div>
+  </li>
+</template>
+
+<template name="log_speaker">
+  <div class="speaker removable_speaker">
+    <div class="name">{{speaker}}</div>
+    <div class="remove"></div>
+  </div>
+</template>
+
+<template name="speaker_list">
+  <div id="speaker-list" class="speaker-list">
+    <div class="label">Speakers : </div>
+    {{#each speakers}}
+      {{> speaker_item}}
+    {{/each}}
+
+    <div class="clear">Clear</div>
+    <div class="scroll">
+      <input class="check" name="scroll" type="checkbox" {{{scroll_checkbox}}} >auto scroll</input>
+    </div>
+  </div>
+</template>
+
+<template name="speaker_item">
+  <div class="speaker {{selected}}">
+    {{speaker_text}} <span class="count">({{count}})</span>
+  </div>
+</template>
+

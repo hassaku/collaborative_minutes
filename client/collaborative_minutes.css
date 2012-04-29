@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background: #eeeeee;
+    color: #333333;
+}
+
+body, input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input {
+    font-size: 100%;
+}
+
+a, a:visited, a:active {
+    color: #258;
+}
+
+h3 {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 120%;
+    padding: 8px 6px;
+    text-align: center;
+}    
+
+#top-speaker-list, #main-pane,  #bottom-pane {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#top-speaker-list {
+    height: 44px;
+    bottom: auto;
+    background: #ddd;
+    border-bottom: 1px solid #999;
+}
+
+#help {
+    padding: 8px;
+}
+
+#main-pane {
+    top: 45px;
+    bottom: 0;
+    overflow: auto;
+}
+
+.speaker {
+    cursor: pointer;
+    float: left;
+    margin: 5px;
+    padding: 2px 7px;
+    font-size: 80%;
+    font-weight: bold;
+    background: #999;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+
+    opacity: 1;
+    transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+
+    position: relative;
+}
+
+#speaker-list .label {
+    float: left;
+    margin-top: 9px;
+    margin-left: 12px;
+    margin-right: 8px;
+}
+
+#speaker-list .speaker {
+    margin-top: 10px;
+    border: 1px solid #777;
+}
+
+#speaker-list .selected {
+    background: #69d;
+}
+
+#speaker-list .count {
+    font-weight: normal;
+    padding-left: 2px;
+}
+
+#speaker-list .scroll {
+    overflow: auto;
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#speaker-list .clear {
+    overflow: auto;
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+
+    cursor: pointer;
+    padding: 2px 7px;
+    font-size: 90%;
+    background: #bc8f8f;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+#pending {
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 60%;
+    color: #a0a0a0;
+}
+
+#new-log-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 160%;
+    position: relative;
+    height: 40px;
+}
+
+#new-log {
+   position: absolute;
+   width: 100%;
+}
+
+#items-view {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#item-list .log {
+    display: block;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #ccc;
+}
+
+#item-list .log .destroy {
+    cursor: pointer;
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    height: 20px;
+    width: 20px;
+}
+
+#item-list .log .display, #item-list .log .edit {
+    margin-left: 30px;
+    height: 100%;
+    width: auto;
+    float: left;
+    padding-top: 18px;
+    line-height: 1;
+}
+
+#log-input {
+    width: 200px;
+    position: relative;
+    top: -3px;
+}
+
+#item-list .done .log-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+#item-list .log:hover .destroy {
+    background: url('/destroy.png') no-repeat 0 0;
+}
+
+#item-list .log .destroy:hover {
+    background-position: 0 -20px;
+}
+
+#item-list .log .created-at {
+    overflow: auto;
+    float: right;
+    margin-right: 8px;
+    margin-top: 15px;
+    color: #a0a0a0;
+}
+
+#item-list .log .item-speakers {
+    overflow: auto;
+    float: left;
+    margin-left: 30px;
+    margin-top: -2px;
+}
+
+#item-list .log .item-speakers .speaker {
+    margin-top: 15px;
+}
+
+#item-list .log .item-speakers .removable_speaker {
+    padding-right: 22px;
+}
+
+#item-list .log .item-speakers .speaker .remove {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    bottom: 0;
+    width: 16px;
+    background: url("/close_16.png") no-repeat 0 center;
+}
+
+#item-list .log .item-speakers .speaker .remove:hover {
+    background-position: -16px center;
+}
+
+#item-list .log .item-speakers div.addspeaker {
+    background: none;
+    color: #333;
+    border: 1px dashed #999;
+    margin-top: 14px;
+}
+
+#item-list .log .log-text {
+    position: absolute;
+    left: 230px;
+    font-size: 100%;
+}
+
+#item-list .log .edit input {
+    position: absolute;
+    left: 230px;
+    margin-top: 20px;
+}
+
+#editspeaker-input {
+    width: 80px;
+}
+
+
