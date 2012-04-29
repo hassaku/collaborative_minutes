@@ -4,7 +4,7 @@
  $ meteor create collaborative_minutes 
  $ rm collaborative_minutes/*
  $ mv collaborative_minutes/.meteor/ /tmp
- $ git clone git@github.com:srackham/leaderboard-coffeescript.git
+ $ git clone git@github.com:hassaku/collaborative_minutes.git
  $ mv /tmp/.meteor/ collaborative_minutes/
  $ cd collaborative_minutes/
  $ meteor add jquery 
