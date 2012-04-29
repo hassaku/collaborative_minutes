@@ -32,9 +32,15 @@
 
  see ./save/
 
-== Demo Site
+== Demo
 
 http://hassaku-minutes.meteor.com/
+
+== TODO
+
+* add like buttons
+* show other's editing activity
+* add buttons to change order
 
 == Others 
 
