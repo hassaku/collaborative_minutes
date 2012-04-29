@@ -32,6 +32,10 @@
 
  see ./save/
 
+== Demo Site
+
+http://hassaku-minutes.meteor.com/
+
 == Others 
 
 Pull requests are always welcome :)
