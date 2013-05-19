@@ -233,7 +233,7 @@ Template.speaker_list.scroll_checkbox = function () {
 Template.speaker_list.events = {
   'click .clear': function (evt) {
     if (window.confirm('Are you sure you want to delete all?')) {
-        Logs.remove({});
+        Meteor.call("clearAllLogs");
         Session.set('speaker_list', null);
     }
   },
