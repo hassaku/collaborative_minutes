@@ -3,7 +3,12 @@ Meteor.startup(function () {
     // initialize users
     Users.remove([]);
 
-    console.log('start')
+    Meteor.methods({
+      clearAllLogs: function () {
+        Logs.remove({});
+      }
+    }); // Meteor.call("clear");
+
     // server information
      Npm.require('dns').lookup(
       Npm.require('os').hostname(), function (err, add, fam) {
