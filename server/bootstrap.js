@@ -3,9 +3,10 @@ Meteor.startup(function () {
     // initialize users
     Users.remove([]);
 
+    console.log('start')
     // server information
-    __meteor_bootstrap__.require('dns').lookup(
-      __meteor_bootstrap__.require('os').hostname(), function (err, add, fam) {
+     Npm.require('dns').lookup(
+      Npm.require('os').hostname(), function (err, add, fam) {
         console.log('\n======================================');
         console.log('server ip address : ' + add + ':3000');
         console.log('======================================\n');
@@ -25,14 +26,12 @@ Meteor.startup(function () {
     if (hour  < 10)   { hour = "0" + hour; }
     if (min < 10)     { min = "0" + min; }
     var filename = year + '-' + mouth + '-' + day + '_' + hour + min + '.txt'
-    Session.set('filename', filename);
-    var fs = __meteor_bootstrap__.require('fs');
+    var fs = Npm.require('fs');
     fs.writeFileSync( 'save/' + filename , '' );
 
     // auto save
     Meteor.setInterval(function() {
-        var filename = Session.get('filename');
-        var fs = __meteor_bootstrap__.require('fs');
+        var fs = Npm.require('fs');
         // print
         str = '';
         Logs.find().forEach(function (log) {
@@ -46,4 +45,3 @@ Meteor.startup(function () {
         console.log('> ' + filename + ' is saved at ' + (new Date()));
       }, 60 * 1000);
 });
-
