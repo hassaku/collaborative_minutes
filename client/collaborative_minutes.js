@@ -47,8 +47,7 @@ var make_okcancel_handler = function (options) {
       // escape = cancel
       cancel.call(this, evt);
 
-    //} else if (evt.type === "keyup" && evt.which === 13 || evt.type === "focusout") {
-    } else if (evt.type === "keyup" && evt.which === 13) {
+    } else if (evt.type === "keydown" && evt.which === 13) {
       // blur/return/enter = ok/submit if non-empty
       var value = String(evt.target.value || "");
       if (value)
@@ -86,14 +85,14 @@ function data_format() {
     return hh + ":" + mm + ":" + ss;
 };
 
-/////////////////////////
-// <div id="main-pane">
 Template.logs.events = {
+  // status which others are inputting data
   'keyup input#new-log': function (evt) {
     var value = $('input#new-log').val().trim();
     Users.update(Session.get('user_id'), {$set: {input: value}});
   }
 };
+
 
 Template.logs.events[ okcancel_events('#new-log') ] =
   make_okcancel_handler({
@@ -101,6 +100,7 @@ Template.logs.events[ okcancel_events('#new-log') ] =
       scroll_bottom(5000);
 
       var speaker = Session.get('speaker_list');
+      // clear status of inputting data
       Users.update(Session.get('user_id'), {$set: {input: ''}});
       Logs.insert({
         text: text,
