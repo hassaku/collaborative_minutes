@@ -1,3 +1,9 @@
+= Overview
+
+Collaboration tool for the minutes.
+
+![my image](demo.png)
+
 == Instration
 
  $ curl install.meteor.com | sh
@@ -31,6 +37,10 @@
 == Destination of the minutes to save
 
  see ./save/
+
+== Movie
+
+http://www.youtube.com/watch?v=LHegIsirPLU
 
 == Demo
 
