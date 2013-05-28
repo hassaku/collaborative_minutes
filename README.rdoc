@@ -1,8 +1,8 @@
 = Overview
 
-Collaboration tool for the minutes.
+=== Collaboration tool for the minutes.
 
-![my image](demo.png)
+{<img src="demo.png">}[https://raw.github.com/hassaku/collaborative_minutes/master/]
 
 == Instration
 
