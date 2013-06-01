@@ -1,7 +1,3 @@
-sorry, under construction :(
-
----
-
 = Overview
 
 === Collaboration tool for the minutes.
